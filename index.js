@@ -1,3 +1,42 @@
+let titulo = document.getElementById("titulo")
+console.log (titulo.innerText)
+titulo.innerText= "Incorporar Eventos"
+console.log (titulo.innerText);
+
+let container = document.getElementById("subtitulo");
+container.innerHTML = "<h2>Distintos tipos de Bebidas que Vendemos</h2>"
+container.className = "subtitulo"
+console.log (document.getElementsByClassName("subtitulo"));
+console.log (container);
+
+const productos =  [{id:1, nombre: "Cerveza Lata Stella Artois", precio: 2900},
+                    {id:2, nombre: "Cerveza Lata Heineken", precio: 3700},
+                    {id:3, nombre: "Trumpeter-Malbec", precio: 5500},
+                    {id:4, nombre: "Fernet Branca 750", precio: 1000},
+                    {id:5, nombre: "Santa Julia Chennin Dulce", precio: 4000},
+                    {id:6, nombre: "Johnnie Walker Red Label", precio: 3800}
+]
+let buttonListado = document.getElementById("buttonListado");
+buttonListado.addEventListener(`click`, listadoProductos)
+
+function listadoProductos() {
+    for (const producto of productos) {
+        let contenedor = document.createElement("div");
+        contenedor.innerHTML = `<div class="tarjeta">
+                                <p> Producto: ${producto.nombre}</p>
+                                <b> $ ${producto.precio}</b>
+                                <h4> ID: ${producto.id}</h4>
+                                <button onclick="avisoCompra(${producto.id})">Comprar</button>
+                                </div>`;
+        document.body.appendChild(contenedor);
+    }
+}
+
+function avisoCompra(id) {
+    let index = id-1
+    alert(`Gracias por agregar al Carrito ${productos[index].nombre}`);
+}
+
 /*var edad = +prompt("Ingresa tu edad (recuerda que debes ser mayor de 18 años)")
 
 if (edad >= 18){
@@ -8,12 +47,7 @@ if (edad >= 18){
 
 alert(resultado);*/
 
-let titulo = document.getElementById("titulo")
-console.log (titulo.innerText)
-titulo.innerText= "Incorporar Eventos"
-console.log (titulo.innerText);
-
-let productos = document.getElementsByClassName ("productos"); 
+/*let productos = document.getElementsByClassName ("productos"); 
 
 console.log(productos[0].innerHTML);
 console.log(productos[1].innerHTML);
@@ -34,22 +68,7 @@ document.getElementById("vinoBlanco1valor").value = 4000;
 document.getElementById("aperitivo1").value = "Fernet Branca 750";
 document.getElementById("aperitivo1valor").value = 1000;
 document.getElementById("whisky1").value = "Johnnie Walker Red Label";
-document.getElementById("whisky1valor").value = 3800;
-
-let boton1 = document.getElementById("btnComprar1");
-boton1.addEventListener("click", function(){alert("hiciste click en el boton comprar")});
-let boton2 = document.getElementById("btnComprar2");
-boton2.addEventListener("click", function(){alert("hiciste click en el boton comprar")});
-let boton3 = document.getElementById("btnComprar3");
-boton3.addEventListener("click", function(){alert("hiciste click en el boton comprar")});
-let boton4 = document.getElementById("btnComprar4");
-boton4.addEventListener("click", function(){alert("hiciste click en el boton comprar")});
-let boton5 = document.getElementById("btnComprar5");
-boton5.addEventListener("click", function(){alert("hiciste click en el boton comprar")});
-let boton6 = document.getElementById("btnComprar6");
-boton6.addEventListener("click", function(){alert("hiciste click en el boton comprar")});
-let boton7 = document.getElementById("btnComprar7");
-boton7.addEventListener("click", function(){alert("hiciste click en el boton comprar")});
+document.getElementById("whisky1valor").value = 3800;*/
 
 /*["cerveza", "vinotinto", "aperitivos", "vinoblanco", "whisky"];
 
